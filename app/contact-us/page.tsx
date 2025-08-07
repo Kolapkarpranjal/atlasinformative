@@ -24,7 +24,7 @@ export default function ContactPage() {
 
       {/* Our Clients Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-900">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Clients</h2>
             <p className="text-lg text-gray-600">
@@ -44,7 +44,7 @@ export default function ContactPage() {
 
       {/* Our Offerings Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-900">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">OUR OFFERINGS</h2>
           </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
       {/* Our Alliances Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-900">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">OUR ALLIANCES</h2>
             <p className="text-lg text-gray-600 mb-8">
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
       {/* Registered Portals Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-900">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">REGISTERED PORTALS</h2>
           </div>
@@ -135,7 +135,7 @@ export default function ContactPage() {
 
       {/* Contact Information & Form Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900">
           <div className="grid lg:grid-cols-2 gap-12">
             
             {/* Contact Information */}

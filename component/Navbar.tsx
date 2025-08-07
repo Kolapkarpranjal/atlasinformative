@@ -61,7 +61,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={toggleServices}
-              className={`flex items-center gap-1 transition ${isContactPage ? 'text-white hover:text-purple-300' : 'text-gray-700 hover:text-purple-600'}`}
+              className="flex items-center gap-1 transition text-purple-600 hover:text-purple-800"
             >
               Services
               <FaChevronDown className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -78,12 +78,22 @@ const Navbar = () => {
           </div>
 
           <NavLink href="/success-stories" active={isActive('/success-stories')} isContactPage={isContactPage}>Success Stories</NavLink>
+          
           <NavLink href="/careers" active={isActive('/careers')} isContactPage={isContactPage}>Careers</NavLink>
-          <NavLink href="/contact-us" active={isActive('/contact-us')} className="text-white font-bold bg-purple-600 px-4 py-2 rounded hover:bg-purple-800 hover:text-white-200 transition-colors duration-300">Contact</NavLink>
+          
+          {/* Contact NavLink (desktop) */}
+          <NavLink 
+            href="/contact-us" 
+            active={isActive('/contact-us')} 
+            className="font-bold px-4 py-2 rounded border-2 border-purple-600 bg-white text-purple-700 shadow-sm hover:bg-purple-100"
+          >
+            Contact
+          </NavLink>
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={toggleMenu} className={`md:hidden ${isContactPage ? 'text-white' : 'text-gray-700'}`}>
+        {/* Hamburger icon (mobile toggle) */}
+        <button onClick={toggleMenu} className="md:hidden text-purple-600">
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
@@ -97,7 +107,7 @@ const Navbar = () => {
           <div>
             <button
               onClick={toggleServices}
-              className={`flex items-center justify-between w-full text-left ${isContactPage ? 'text-white' : 'text-gray-700'}`}
+              className={`flex items-center justify-between w-full text-left text-purple-600`}
             >
               <span>Services</span>
               <FaChevronDown className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -115,25 +125,24 @@ const Navbar = () => {
 
           <MobileLink href="/success-stories" label="Success Stories" closeAll={closeAll} isContactPage={isContactPage} />
           <MobileLink href="/careers" label="Careers" closeAll={closeAll} isContactPage={isContactPage} />
-          <MobileLink href="/contact-us" label="Contact" closeAll={closeAll} className="text-purple-300 font-semibold" isContactPage={isContactPage} />
+          {/* Contact NavLink (mobile menu) */}
+          <MobileLink href="/contact-us" label="Contact" closeAll={closeAll} className="text-purple-600 font-semibold" isContactPage={isContactPage} />
         </div>
       )}
     </nav>
   );
 };
 
-const NavLink = ({ href, active, children, className = '', isContactPage = false }: any) => (
+const NavLink = ({ href, active, children, className = '' }: any) => (
   <Link href={href} className={`relative group ${className}`}>
     <span className={`transition ${
       active 
-        ? (isContactPage ? 'text-white-300 font-semibold' : 'text-white-600 font-semibold')
-        : (isContactPage ? 'text-white hover:text-white-300' : 'text-gray-700 hover:text-white-600')
+        ? 'text-purple-800 font-semibold'
+        : 'text-purple-600 hover:text-purple-800'
     }`}>
       {children}
     </span>
-    <span className={`block h-0.5 w-0 transition-all duration-300 ${
-      isContactPage ? 'bg-purple-300' : 'bg-purple-600'
-    } group-hover:w-full`}></span>
+    <span className={`block h-0.5 w-0 transition-all duration-300 bg-purple-600 group-hover:w-full`}></span>
   </Link>
 );
 
@@ -147,12 +156,8 @@ const DropdownItem = ({ href, icon, title, description, onClick }: any) => (
   </Link>
 );
 
-const MobileLink = ({ href, label, closeAll, className = '', active = false, isContactPage = false }: any) => (
-  <Link href={href} onClick={closeAll} className={`block py-1 ${
-    active 
-      ? (isContactPage ? 'text-purple-300 font-semibold' : 'text-blue-600 font-semibold') 
-      : (isContactPage ? 'text-white' : 'text-gray-700')
-  } ${className}`}>
+const MobileLink = ({ href, label, closeAll, className = '', active = false }: any) => (
+  <Link href={href} onClick={closeAll} className={`block py-1 ${active ? 'text-purple-800 font-semibold' : 'text-purple-600'} ${className}`}>
     {label}
   </Link>
 );
