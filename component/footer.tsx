@@ -94,7 +94,7 @@ export default function Footer() {
                  </div>
                 <div>
                   <p className="text-sm text-gray-300">Email</p>
-                  <p className="text-white">info@atlasinformatics.com</p>
+                  <p className="text-white">contact@atlasinformatics.in</p>
                 </div>
               </div>
               
@@ -104,7 +104,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-300">Phone</p>
-                  <p className="text-white">+91 123 456 7890</p>
+                  <p className="text-white">+91-8799962145</p>
+                  <p className="text-white">+91-9699593302</p>
                 </div>
               </div>
 

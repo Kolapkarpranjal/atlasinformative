@@ -151,7 +151,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91-88059 28838</p>
+                    <p className="text-gray-600">+91-8799962145</p>
+                    <p className="text-gray-600">+91-9699593302</p>
                   </div>
                 </div>
                 
