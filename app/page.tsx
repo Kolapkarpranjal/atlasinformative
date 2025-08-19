@@ -1,11 +1,29 @@
+"use client";
+
 import Footer from '../component/footer';
+import { motion } from "framer-motion";
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <main className="min-h-screen">
-      
-      {/* Hero Banner */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <main className="min-h-screen bg-[#0F0A1F] relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="animated-bg fixed inset-0 z-0">
+        {/* Floating Geometric Shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-xl float-animation"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full blur-xl float-animation" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-xl float-animation" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-xl float-animation" style={{animationDelay: '0.5s'}}></div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 pt-20">
         {/* Background Video */}
         <video
           autoPlay
@@ -19,204 +37,298 @@ export default function Home() {
         </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-[#0F0A1F]/80 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Empowering Your
-            <span className="text-purple-400 block">Digital Future</span>
+        <div className="relative z-20 max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
+          >
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="text-white">Technology Solutions for</span>
+              <span className="block gradient-text mt-2">Advanced Industries</span>
           </h1>
-          
-          <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            Delivering cutting-edge IT hardware, software, and security solutions that drive innovation, 
-            ensure business continuity, and accelerate your digital transformation.
-          </p>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold text-lg rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-12"
+          >
+            <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Accelerate innovation with cutting-edge IT hardware, software, and security solutions 
+              designed for complex industries. Drive digital transformation with confidence.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
               Get Started Today
             </button>
-            
-            <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold text-lg rounded-lg transition-all duration-300 transform hover:scale-105">
-              Explore Services
+            <button className="border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
+              Explore Solutions
             </button>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-          <svg 
-            className="w-6 h-6 text-white" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="w-6 h-10 border-2 border-purple-500 rounded-full flex justify-center">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1 h-3 bg-purple-500 rounded-full mt-2"
             />
-          </svg>
         </div>
+        </motion.div>
       </section>
 
-      {/* SERVICES SECTION */}
-      <section className="py-20 bg-purple-50">
+      {/* Services Section */}
+      <section className="py-24 relative z-10 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Services
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              Our <span className="gradient-text">Solutions</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive IT solutions tailored to your business needs
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive technology solutions tailored for advanced manufacturing and complex industries
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Hardware Products */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🖥️</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Hardware Products</h3>
-              <p className="text-gray-600">Quality hardware solutions for optimal performance and reliability.</p>
-            </div>
-
-            {/* Software Products */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">💻</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Software Products</h3>
-              <p className="text-gray-600">Custom software development and enterprise solutions.</p>
-            </div>
-
-            {/* Cloud Computing */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-purple-200 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">☁️</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Cloud Computing</h3>
-              <p className="text-gray-600">Scalable cloud infrastructure and migration services.</p>
-            </div>
-
-            {/* Technology Solutions */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">🔧</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Technology Solutions</h3>
-              <p className="text-gray-600">Comprehensive tech solutions for digital transformation.</p>
-            </div>
+            {[
+              {
+                icon: "🖥️",
+                title: "Hardware Products",
+                desc: "High-performance hardware solutions for optimal reliability and performance.",
+                gradient: "from-purple-500 to-blue-500"
+              },
+              {
+                icon: "💻",
+                title: "Software Products",
+                desc: "Custom enterprise software and digital transformation solutions.",
+                gradient: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: "☁️",
+                title: "Cloud Computing",
+                desc: "Scalable cloud infrastructure and migration services.",
+                gradient: "from-cyan-500 to-purple-500"
+              },
+              {
+                icon: "🔧",
+                title: "Technology Solutions",
+                desc: "Comprehensive tech solutions for digital transformation.",
+                gradient: "from-purple-500 to-pink-500"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-[#1A1035] border border-[#2D1B69] rounded-2xl p-8 card-hover">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-6 text-3xl glow-purple`}>
+                  {service.icon}
+                </div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                  <p className="text-gray-300 text-lg leading-relaxed">{service.desc}</p>
+                  <div className="mt-6 flex items-center text-purple-400 font-semibold group-hover:text-purple-300 transition-colors duration-300">
+                    Learn More
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SUCCESS STORIES SECTION */}
-      <section className="py-20 bg-white">
+      {/* Success Stories Section */}
+      <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Success Stories
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              Success <span className="gradient-text">Stories</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See how we&apos;ve helped businesses achieve their digital goals
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              See how we've helped businesses achieve their digital transformation goals
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Story 1 */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="text-purple-600 text-4xl mb-4">📈</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Tech Startup Growth</h3>
-              <p className="text-gray-600 mb-4">Helped a startup scale their infrastructure 10x while reducing costs by 40%.</p>
-              <div className="text-sm text-purple-600 font-medium">→ Read Case Study</div>
+            {[
+              {
+                icon: "📈",
+                title: "Tech Startup Growth",
+                desc: "Helped a startup scale their infrastructure 10x while reducing costs by 40%.",
+                metrics: "10x Scale, 40% Cost Reduction"
+              },
+              {
+                icon: "🏢",
+                title: "Enterprise Security",
+                desc: "Implemented comprehensive security solutions for a Fortune 500 company.",
+                metrics: "100% Security Coverage"
+              },
+              {
+                icon: "🚀",
+                title: "Digital Transformation",
+                desc: "Accelerated digital transformation for a traditional manufacturing company.",
+                metrics: "60% Efficiency Increase"
+              }
+            ].map((story, index) => (
+              <motion.div
+                key={story.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-[#1A1035] border border-[#2D1B69] rounded-2xl p-8 card-hover">
+                  <div className="text-5xl mb-6">{story.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                    {story.title}
+                  </h3>
+                  <p className="text-gray-300 text-lg mb-6 leading-relaxed">{story.desc}</p>
+                  <div className="text-sm text-purple-400 font-semibold mb-4">{story.metrics}</div>
+                  <div className="flex items-center text-purple-400 font-semibold group-hover:text-purple-300 transition-colors duration-300">
+                    Read Case Study
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
             </div>
-
-            {/* Story 2 */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="text-green-600 text-4xl mb-4">🏢</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Security</h3>
-              <p className="text-gray-600 mb-4">Implemented comprehensive security solutions for a Fortune 500 company.</p>
-              <div className="text-sm text-green-600 font-medium">→ Read Case Study</div>
             </div>
-
-            {/* Story 3 */}
-            <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
-              <div className="text-purple-700 text-4xl mb-4">🚀</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Digital Transformation</h3>
-              <p className="text-gray-600 mb-4">Accelerated digital transformation for a traditional manufacturing company.</p>
-              <div className="text-sm text-purple-700 font-medium">→ Read Case Study</div>
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE US SECTION */}
-      <section className="py-20 bg-gray-900 text-white">
+      {/* Why Choose Us Section */}
+      <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Choose Atlas Informatics?
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="gradient-text">Atlas Informatics</span>?
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              We deliver exceptional value through expertise, innovation, and commitment
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We deliver exceptional value through expertise, innovation, and unwavering commitment
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Expertise */}
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl">🎯</span>
+            {[
+              {
+                icon: "🎯",
+                title: "Expert Team",
+                desc: "Certified professionals with years of industry experience and deep technical knowledge.",
+                color: "from-purple-500 to-blue-500"
+              },
+              {
+                icon: "💡",
+                title: "Innovation First",
+                desc: "Cutting-edge solutions that keep you ahead of the competition and future-ready.",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: "🛡️",
+                title: "24/7 Support",
+                desc: "Round-the-clock technical support and maintenance services for peace of mind.",
+                color: "from-cyan-500 to-purple-500"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 glow-purple`}>
+                  <span className="text-3xl">{feature.icon}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
-              <p className="text-gray-300">Certified professionals with years of industry experience.</p>
-            </div>
-
-            {/* Innovation */}
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl">💡</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Innovation First</h3>
-              <p className="text-gray-300">Cutting-edge solutions that keep you ahead of the competition.</p>
-            </div>
-
-            {/* Support */}
-            <div className="text-center group">
-              <div className="text-center group">
-                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl">🛡️</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-                <p className="text-gray-300">Round-the-clock technical support and maintenance services.</p>
-              </div>
-            </div>
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 text-lg leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
+      {/* CTA Section */}
+      <section className="py-24 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
+            <div className="relative bg-[#1A1035] border border-[#2D1B69] rounded-3xl p-12">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your <span className="gradient-text">Business</span>?
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
-            Let&apos;s discuss how our solutions can drive your digital success
+              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Let's discuss how our cutting-edge solutions can drive your digital success and accelerate innovation
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold text-lg px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
               Get Free Consultation
             </button>
-            <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105">
+                <button className="border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold text-lg px-10 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
               View Our Portfolio
             </button>
           </div>
         </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
