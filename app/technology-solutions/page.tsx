@@ -181,7 +181,7 @@ export default function TechnologySolutionsPage() {
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our comprehensive technology solutions encompass both software and hardware management, 
-                ensuring your business has the tools and infrastructure needed for success in today's 
+                ensuring your business has the tools and infrastructure needed for success in todays 
                 digital landscape.
               </p>
               <div className="space-y-4">
@@ -228,7 +228,7 @@ export default function TechnologySolutionsPage() {
                   Contact Us →
                 </Link>
                 <Link 
-                  href="/services" 
+                  href="#solutions" 
                   className="px-8 py-4 border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
                   View All Services →

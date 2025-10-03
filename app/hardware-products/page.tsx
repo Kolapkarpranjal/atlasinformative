@@ -27,7 +27,7 @@ export default function HardwareProductsPage() {
                 Hardware <span className="gradient-text">Solutions</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-4xl leading-relaxed mb-8">
-                In today's technology-driven world, having reliable and efficient hardware is critical to the success of any organization. However, managing and maintaining hardware infrastructure can be challenging, requiring significant time, expertise, and resources.
+                In todays technology-driven world, having reliable and efficient hardware is critical to the success of any organization. However, managing and maintaining hardware infrastructure can be challenging, requiring significant time, expertise, and resources.
               </p>
               <p className="text-lg text-gray-400 mb-8">
                 Outsourcing your Hardware Solutions to trusted professionals is a strategic way to optimize your IT environment and ensure peak performance.
@@ -243,7 +243,7 @@ export default function HardwareProductsPage() {
                   Contact Us →
                 </Link>
                 <Link 
-                  href="/services" 
+                  href="#solutions" 
                   className="px-8 py-4 border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
                   View All Services →

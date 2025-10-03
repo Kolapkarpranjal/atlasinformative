@@ -180,12 +180,7 @@ export default function AboutPage() {
             Organizations trust us as a proven technology partner, and we can do the same for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/brochure" 
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
-            >
-              Digital Brochure →
-            </Link>
+         
             <Link 
               href="/contact-us" 
                   className="px-8 py-4 border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"

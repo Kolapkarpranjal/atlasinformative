@@ -1,8 +1,10 @@
+'use client'
+
 import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A0618] text-white border-t border-purple-500/20">
+    <footer className="bg-[#0A0618] text-white border-t border-purple-500/20 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
@@ -66,6 +68,11 @@ const Footer = () => {
                   Technology Solutions
                 </Link>
               </li>
+              <li>
+                <Link href="/contact-us" className="text-gray-300 hover:text-purple-400 transition-colors duration-300">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -73,24 +80,24 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-purple-400">Contact Info</h3>
             <div className="space-y-3">
-          <div>
+              <div>
                 <p className="text-gray-300 text-sm">Address:</p>
                 <p className="text-white">Mumbai, Maharashtra, India</p>
-                </div>
-                <div>
+              </div>
+              <div>
                 <p className="text-gray-300 text-sm">Phone:</p>
                 <p className="text-white">+91-8799962145</p>
                 <p className="text-white">+91-9699593302</p>
-                 </div>
-                <div>
+              </div>
+              <div>
                 <p className="text-gray-300 text-sm">Email:</p>
                 <p className="text-white">contact@atlasinformatics.in</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
+        {/* Bottom Bar */}
         <div className="border-t border-purple-500/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
               © 2024 Atlas Informatics. All rights reserved.
@@ -98,10 +105,10 @@ const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
                 Privacy Policy
-              </Link>
+            </Link>
             <Link href="/terms" className="text-gray-400 hover:text-purple-400 text-sm transition-colors duration-300">
                 Terms of Service
-              </Link>
+            </Link>
           </div>
         </div>
       </div>

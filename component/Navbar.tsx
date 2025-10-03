@@ -112,13 +112,16 @@ const Navbar = () => {
             Careers
           </NavLink>
 
-          {/* Contact Button */}
-          <Link href="/contact-us" className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <button className="relative px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-full transition-all duration-300 transform group-hover:scale-105 hover:shadow-purple-500/50 border border-purple-400/20 shadow-lg hover:shadow-2xl">
-              <span className="relative z-10">Contact Us</span>
-            </button>
-          </Link>
+       <Link
+  href="/contact-us"
+  onClick={closeAll}
+  className="relative px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-purple-500/50 border border-purple-400/20 shadow-lg hover:shadow-2xl"
+>
+  Contact Us
+</Link>
+
+
+
         </div>
 
         {/* Mobile Toggle */}

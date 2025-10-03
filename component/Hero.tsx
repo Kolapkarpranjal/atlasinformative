@@ -72,12 +72,15 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Link
-            href="/contact"
-            className="relative bg-gradient-to-r from-[#a855f7] to-[#ec4899] px-8 py-4 rounded-lg font-semibold text-lg text-white transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(236,72,153,0.8)] hover:shadow-[0_0_30px_rgba(236,72,153,1)]"
-          >
-            Get Started Today
-          </Link>
+        <Link
+  href="/contact-us"
+  className="relative bg-gradient-to-r from-[#a855f7] to-[#ec4899] px-8 py-4 rounded-lg font-semibold text-lg text-white transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(236,72,153,0.8)] hover:shadow-[0_0_30px_rgba(236,72,153,1)]"
+>
+  Get Started Today
+</Link>
+
+
+
 
           <Link
             href="/services"

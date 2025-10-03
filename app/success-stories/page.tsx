@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '../../component/Navbar';
 import Footer from '../../component/footer';
 import Link from 'next/link';
@@ -420,12 +421,7 @@ export default function SuccessStoriesPage() {
                 >
                   Start Your Journey →
                 </Link>
-                <Link 
-                  href="/services" 
-                  className="px-8 py-4 border-2 border-purple-500 text-purple-400 hover:text-white hover:bg-purple-500 font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Our Services →
-                </Link>
+              
               </div>
             </div>
           </div>
